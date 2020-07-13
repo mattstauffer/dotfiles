@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# I've done many of these over the years, but the latest incarnation is inspired
-# by Ian Landsman reminding me you can use Homebrew to install Mac App Store apps
-
 # Last updated: July 13, 2020
 
 echo 'Install Homebrew'
