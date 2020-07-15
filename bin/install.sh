@@ -19,7 +19,6 @@ source ../support/brew.sh
 
 # @todo symlink all of my scripts (.zshrc, .vimrc, ssh config, .vimrc, ?)
 
-
 # @todo mac settings
 # choosy as browser
 # turn on filevault
@@ -33,6 +32,8 @@ source ../support/brew.sh
 # add all twitter accounts to tweetbot
 # install powerline fonts??
 # install vundle or whatever other vim bundler
+# get any id_rsa keys I want to bring over
+# set alfred up to sync from dropbox file
 
 
 # @todo all the steps in my Bear doc "sync/etc" and "settings" and "code"
