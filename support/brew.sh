@@ -38,3 +38,6 @@ echo '---------------------------------------'
 source ./brew_apps.sh
 
 # @todo iterate over the array and install them all
+
+
+# @todo start brew services

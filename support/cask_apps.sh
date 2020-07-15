@@ -46,7 +46,7 @@ CASK_APPS=(
     # @todo karabiner elements
     # @todo keybase
     # @todo mailmate
-    # @todo notational velocity
+    # @todo nvalt
     # @todo OBS
     # @todo paw
     # @todo postgres
@@ -57,4 +57,6 @@ CASK_APPS=(
     # @todo soundsource
     # @todo stream deck
     # @todo loopback
+    # @todo choosy
+    # @todo hazel
 )
