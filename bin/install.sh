@@ -11,12 +11,8 @@ echo 'HOMEBREW ================'
 echo ''
 source ../support/brew.sh
 
-echo 'VALET ==================='
-echo ''
-#@todo valet install ... assumning homebrew already installed it?
-
 echo 'OHMYZSH ================='
-echo '
+echo ''
 # @todo brew install zsh zsh-completions
 # @todo chsh -s /usr/local/bin/zsh
 # @todo Oh my zsh
@@ -25,7 +21,10 @@ echo 'COMPOSER ================'
 echo ''
 # @todo composer
 # @todo all composer global deps
-# @todo valet install
+
+echo 'VALET ==================='
+echo ''
+#@todo valet install ... assumning Composer global script already installed it?
 
 echo 'NPM ====================='
 echo ''
