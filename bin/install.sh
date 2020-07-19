@@ -1,9 +1,20 @@
 #!/bin/bash
 
+my_dir="$(dirname "$0")"
+
+source "$my_dir/../support/functions.sh"
+
 # Last updated: July 13, 2020
 
-# @todo Get Dropbox installed
-# @todo
+source "$my_dir/../support/precheck.sh"
+
+echo "Only tested to this point"
+
+exit
+
+echo 'SYM LINKS ==============='
+echo ''
+
 # @todo symlink all of my scripts (.zshrc, .vimrc, ssh config, .vimrc, ?)
 # @todo either create a new id_rsa or copy it from old computer... which is better? how do you prompt for this in a script?
 
