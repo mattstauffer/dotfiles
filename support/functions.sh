@@ -1,16 +1,12 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Functions
 
 prompt_quit_if_no () {
-    echo -n "$1 (y/n) "
-    read answer
-    if [ "$answer" == "${answer#[Yy]}" ] ;then
+    if read -q "choice?$1 (y/n)"; then
         echo ''
-        echo 'Quitting...'
-        echo ''
+    else
+        echo "\nQuitting...\n"
         exit
     fi
-    echo ''
 }
-

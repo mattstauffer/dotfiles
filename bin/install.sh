@@ -1,22 +1,25 @@
-#!/bin/bash
-
-my_dir="$(dirname "$0")"
-
-source "$my_dir/../support/functions.sh"
+#!/bin/zsh
 
 # Last updated: July 13, 2020
 
+my_dir="$(dirname "$0")"
+pretend=true
+
+# Load functions
+source "$my_dir/../support/functions.sh"
+
+# Check and prompt for necessary dependencies
 source "$my_dir/../support/precheck.sh"
 
-echo "Only tested to this point"
-
-exit
 
 echo 'SYM LINKS ==============='
 echo ''
 
-# @todo symlink all of my scripts (.zshrc, .vimrc, ssh config, .vimrc, ?)
-# @todo either create a new id_rsa or copy it from old computer... which is better? how do you prompt for this in a script?
+source "$my_dir/../support/sym_links.sh"
+
+echo "Only tested to this point"
+
+exit
 
 echo 'HOMEBREW ================'
 echo ''
