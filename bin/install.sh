@@ -25,6 +25,11 @@ echo 'HOMEBREW ================'
 echo ''
 source ../support/brew.sh
 
+echo "GIT ====================='
+echo ''
+
+# @todo stuff with setting your name and email in git config --global --edit
+
 echo 'OHMYZSH ================='
 echo ''
 # @todo brew install zsh zsh-completions
