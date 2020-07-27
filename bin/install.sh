@@ -18,7 +18,6 @@ echo ''
 source "$my_dir/../support/sym_links.sh"
 
 echo "Only tested to this point"
-
 exit
 
 echo 'HOMEBREW ================'
@@ -27,23 +26,25 @@ source ../support/brew.sh
 
 echo "GIT ====================='
 echo ''
-
-# @todo stuff with setting your name and email in git config --global --edit
+git config --global --edit
 
 echo 'OHMYZSH ================='
 echo ''
-# @todo brew install zsh zsh-completions
-# @todo chsh -s /usr/local/bin/zsh
-# @todo Oh my zsh
+# Should already be installed but what the hell
+brew install zsh zsh-completions
+chsh -s /usr/local/bin/zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo 'COMPOSER ================'
 echo ''
-# @todo composer
-# @todo all composer global deps
+brew install composer
+# @todo all composer global deps: Valet, Laravel Installer, Lambo, ?
 
 echo 'VALET ==================='
 echo ''
-#@todo valet install ... assumning Composer global script already installed it?
+valet install
+mkdir ~/Sites
+# @todo park ~/Sites? 
 
 echo 'NPM ====================='
 echo ''
