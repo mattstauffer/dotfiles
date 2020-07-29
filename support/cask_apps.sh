@@ -37,7 +37,6 @@ CASK_APPS=(
     "mailmate"
     "nvalt"
     "obs"
-    "paw"
     "postgres"
     "rocket"
     "signal"
