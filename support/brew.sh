@@ -1,28 +1,36 @@
 echo 'Installing Homebrew'
 echo '-------------------'
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if (! command -v brew &> /dev/null); then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    echo 'Installed.'
+else
+    echo 'Already installed; skipping.'
+fi
 
-echo 'Installing brew-cask'
-echo '--------------------'
-brew tap caskroom/cask
-brew install brew-cask
-
+echo ''
 echo 'Installing brew-mas'
 echo '-------------------'
 brew install mas
 
+
+echo ''
 echo 'Installing Cask apps'
 echo '--------------------'
-source ./cask_apps.sh
+source "$support_dir/cask_apps.sh"
 
+echo ''
 echo 'Installing Mac App Store Software'
 echo '---------------------------------'
-source ./mas_apps.sh
+source "$support_dir/mas_apps.sh"
 
+echo 'installed mas and cask, quitting'
+exit
+
+echo ''
 echo 'Installing normal Homebrew dependencies'
 echo '---------------------------------------'
-source ./brew_apps.sh
+source "$support_dir/brew_apps.sh"
 
 # @todo start brew services
 # @todo Once I run this once, try dumping to a Brewfile to see if it actually dumps MAS and Cask correctly; if so, potentially replace all this with just Brewfile

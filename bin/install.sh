@@ -2,31 +2,27 @@
 
 # Last updated: July 13, 2020
 
+set +x
 my_dir="$(dirname "$0")"
+support_dir="$my_dir/../support"
 
 # Load functions
-source "$my_dir/../support/functions.sh"
+source "$support_dir/functions.sh"
 
 # Check and prompt for necessary dependencies
-source "$my_dir/../support/precheck.sh"
+source "$support_dir/precheck.sh"
 
 title 'SYM LINKS'
-
-source "$my_dir/../support/sym_links.sh"
+source "$support_dir/sym_links.sh"
 
 title 'VIM & VUNDLE'
+source "$support_dir/vim.sh"
 
-mkdir -p ~/.vim/bundle
-
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+title 'HOMEBREW'
+source "$support_dir/brew.sh"
 
 echo 'Only tested to this point'
 exit
-
-title 'HOMEBREW'
-source ../support/brew.sh
 
 title 'GIT'
 git config --global --edit
@@ -58,6 +54,9 @@ title 'RVM'
 #m Rvm use 2.5.1
 
 title 'MACOS SETTINGS'
-source "$my_dir/../support/mac_settings.sh"
+source "$support_dir/mac_settings.sh"
+
+title 'MANUAL STEPS'
+source "$support_dir/manual_steps.sh"
 
 # @todo all the steps in my Bear doc "code"... how many can be done programatically

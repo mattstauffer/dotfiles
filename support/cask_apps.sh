@@ -45,19 +45,14 @@ CASK_APPS=(
     "soundsource"
     "choosy"
     "hazel"
-
-    # @todo Move into a prompt, not Cask:
-    # adobe creative suite: acrobat, audition, photoshop
-    # cloud app
-    # vs code
-    # hey
-    # ecamm movie tools
-    # elgato control center
-    # stream deck
-    # frank deloupe
-    # things
-    # gif brewery
-    # restream chat
-
-    # @todo audit all other apps
 )
+
+# Spent all this time writing this and you can't even do it this way???
+# string=${(j: :)CASK_APPS}
+# brew cask install $string
+
+# This sucks and will motivate me to move to Brewfile even faster
+for app in $CASK_APPS; do
+    # @todo
+    echo "brew cask install $app"
+done
