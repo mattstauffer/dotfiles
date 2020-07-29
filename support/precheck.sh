@@ -8,3 +8,4 @@ then
 fi
 
 prompt_quit_if_no "Do you have SSH keys linked that have access to everything important?"
+echo ''

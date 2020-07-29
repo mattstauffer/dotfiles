@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function xdebug {
     PHP_VERSION="$(php -r "\$v=explode('.', PHP_VERSION ); echo implode('.', array_splice(\$v, 0, -1));")"
     CONFIG_PATH="$(brew --prefix)/etc/php/${PHP_VERSION}/conf.d"
@@ -10,7 +12,7 @@ function xdebug {
     elif test -f "$CONFIG_FILE_DISABLED"; then
         mv "${CONFIG_FILE_DISABLED}" "${CONFIG_FILE}"
         echo -e "\nXdebug enabled.\n"
-    else 
+    else
         echo -e "\nError: Can't find any Xdebug config file at ${CONFIG_FILE}."
         exit
     fi
