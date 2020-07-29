@@ -18,17 +18,18 @@ source "$my_dir/../support/sym_links.sh"
 echo "Only tested to this point"
 exit
 
+echo 'VIM & VUNDLE ============'
+echo ''
+# @todo
+
 echo 'HOMEBREW ================'
 echo ''
 source ../support/brew.sh
 
-echo "GIT ====================='
+echo 'GIT ====================='
 echo ''
 git config --global --edit
-
 git config --global core.excludesfile ~/.gitignore
-
-# @todo: Set global gitignore
 
 echo 'OHMYZSH ================='
 echo ''
@@ -62,22 +63,6 @@ echo ''
 
 echo 'MACOS SETTINGS =========='
 echo ''
-# @todo mac settings
-# choosy as browser
-# turn on filevault
-# disable spotlight suggestions
-# full keyboard access; all controls
-# iterm uyse solarized dark
-# iterm yuse dejavu sans mono for powerline
-# set caps lock as esc
-# Add all cals to busycal
-# let busycal take over alarms
-# add all twitter accounts to tweetbot
-# install powerline fonts??
-# install vundle or whatever other vim bundler
-# set alfred up to sync from dropbox file
-
-#
-
+source "$my_dir/../support/mac_settings.sh"
 
 # @todo all the steps in my Bear doc "code"... how many can be done programatically

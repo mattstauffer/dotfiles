@@ -1,0 +1,231 @@
+" Use za to expand folded sections, or <space>
+" Remember to look here: http://dougblack.io/words/a-good-vimrc.html
+"
+
+" {{{ Vundle
+set nocompatible  " required for Vundle
+filetype off      " required for Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+" VUNDLE PLUGINS - START
+
+Plugin 'kristijanhusak/vim-hybrid-material'  " Material theme
+Plugin 'rking/ag.vim'                        " Silver searcher (ag.vim)
+Plugin 'kien/ctrlp.vim'                      " Ctrl-P file chooser
+Plugin 'vim-airline/vim-airline'             " Airline Powerline clone
+Plugin 'altercation/vim-colors-solarized'    " Solarized for command line vim
+Plugin 'tpope/vim-vinegar'                   " File switcher
+" Plugin 'Shougo/neocomplete.vim'              " Inline autocomplete
+Plugin 'scrooloose/nerdcommenter'            " Commenting with <times><leader>c<space>
+Plugin 'terryma/vim-multiple-cursors'        " Multiple cursors with <ctrl-n>
+Plugin 'easymotion/vim-easymotion'           " Easy motion with <leader><leader>
+Plugin 'jwalton512/vim-blade'                " Laravel Blade syntax highlighting
+Plugin 'darthmall/vim-vue'                   " Vue component syntax highlighting
+""###Plu0gin0 'SirVer/ultisn-ips'                    " Code snippets plugin
+Plugin 'honza/vim-snippets'                  " Code snippets - snippets
+Plugin 'scrooloose/nerdtree'                 " NERDTree
+Plugin 'StanAngeloff/php.vim'                  " Better PHP synatx
+Plugin 'arnaud-lb/vim-php-namespace'         " Use import and FQCN expansion
+Plugin 'junegunn/fzf'                        " Fuzzy Finder https://github.com/junegunn/fzf
+Plugin 'vim-airline/vim-airline-themes'      " Powerline/Airline themes
+
+
+" Plugins to consider from david hemphill
+" indentLine
+" supertab
+" tlib_vim
+" vim-addon-mw-utils
+" vim-bufkill
+" vim-fugitive
+" vim-gitgutter
+" vim-gotham
+" vim-rooter
+" vim-snipmate
+" vim-snippets
+
+" VUNDLE PLUGINS - END
+"
+call vundle#end()
+filetype plugin indent on
+" }}}
+
+" {{{ Basic settings and UI 
+set background=dark
+" .gvimrc sets color scheme to hybrid_material
+colorscheme solarized
+let g:airline_theme = "solarized" " ... doesn't seem to be doing anything?
+let g:airline_solarized_bg = "dark"
+let g:airline_powerline_fonts = 1
+let g:enable_bold_font = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:neocomplete#enable_at_startup = 1
+set laststatus=2   " Always show airline/powerline bar
+syntax enable      " enable syntax processing
+set tabstop=4      " Number of visual spaces to show per tab
+set softtabstop=4  " Number of spaces in a tab when editing
+set shiftwidth=4   " Number of spaces when auto indent adds after a {, etc.
+set expandtab      " Turn tab key into 4 spaces
+set number         " Show line numbers
+set showcmd        " Show the last command entereted in the bottom right
+set cursorline     " Show a horizontal highlight on your current line
+filetype indent on " Allow for filetype-specific indent configuration files in ~/.vim/indent/filetype.vim
+set wildmenu       " Visual autocomplete for command menu
+set wildmode=list:longest  " When autocompleting, list all matches
+set lazyredraw     " Faster macros, etc. by only redrawing the screen when necessary
+set showmatch      " Highlight matching character (e.g. highlight right paren when cursor over left paren)
+set t_CO=256       " Use 256 colors
+let &colorcolumn=join(range(81,999),",")
+set noerrorbells visualbell t_vb=        " No bells
+autocmd GUIEnter * set visualbell t_vb=  " No bells
+set nobackup       " No backup files
+set nowritebackup  " Only in case you don't want a backup file while editing
+set noswapfile     " No swap files
+
+" Added these after looking at David Hemphill's on 2016-01-27
+set encoding=utf-8
+set mouse=a        " Enables mouse (maybe only matters for terminal vim?)
+set wildignore=node_modules/**
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" return - to vinegar
+let NERDTreeHijackNetrw = 0
+" }}}
+
+" {{{ MacVim
+if has('gui_running')
+    " Looks awful in terminal vim
+    colorscheme hybrid_material
+
+    " set guifont=Menlo\ for\ Powerline:h13
+    " DejaVu is better-patched than my manual Menlo patch; works in both
+    " terminal vim and MacVim
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h15
+    set linespace=10
+
+    " Hide toolbar and scrollbars 
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=r
+    set guioptions-=R
+endif
+" }}} 
+
+" {{{ Searching 
+set incsearch      " Search as characters are entered
+set hlsearch       " Highlight matches when searching
+" Disable highlighted matches using <leader><space>
+nnoremap <leader><space> :nohlsearch<CR>
+" }}}
+
+" {{{ Folding 
+set foldenable         " Enable folding
+set foldlevelstart=10  " Open most folds by default
+set foldnestmax=10     " Limit the number of folds that can be nested
+" Map <space> to open or close folds
+nnoremap <space> za
+" }}}
+
+" {{{ Movement 
+" Set default split to below and right
+set splitbelow
+set splitright
+
+" Add CTRL-<movement> for split navigation
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
+" }}}
+
+" {{{ Leader Shortcuts 
+let mapleader=","        " Set our leader to comma
+" set jk to <esc>
+inoremap jk <esc>
+
+" edit config files
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>es :vsp ~/.vimcheatsheet<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" Laravel-specific
+nmap <leader>lr :e routes/web.php<cr>
+nmap <leader>lca :e config/app.php<cr>
+nmap <leader>lm :!php artisan make:
+nmap <leader>lc :CtrlP<cr>app/Http/Controllers
+nmap <leader>lv :CtrlP<cr>resources/views
+
+" PHP Imports
+" Import class up top 
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
+" Expand FQCN inline
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
+
+" Sort import alphabetically
+autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
+
+" open ag.vim (silver searcher)
+nnoremap <leader>a :Ag
+" cTag search using ctrl p maybe??
+nnoremap <leader>. :CtrlPTag<cr>
+" cTag search using tags
+nnoremap <leader>f :tag<space>
+" run ctags, uses ~/.ctags for settings
+nnoremap <leader>c !ctags
+
+" open nerdtree
+nnoremap <leader>kb :NERDTreeToggle<cr>
+
+" Navigate buffers
+nnoremap <leader>[ :bprev<cr>
+nnoremap <leader>] :bnext<cr>
+
+" Run tests
+nnoremap <leader>p :!clear && phpunit<cr>
+nnoremap <leader>pc :!clear && phpunit %<cr>
+
+" nmap <c-R> :CtrlPBufTag<cr> " breaks undo. Fix later.
+nmap <D-e> :CtrlPMRUFiles<cr>
+" }}}
+
+" {{{ Ctrl-p settings 
+" let g:ctrlp_match_window = 'bottom,order:ttb'                  " Show matches top to bottom 
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'   "Trying jeff
+let g:ctrlp_switch_buffer = 0                                  " Always open files in a new buffer
+let g:ctrlp_working_path_mode = 0                              " Set CtrlP to respect the working directory if it changes
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " Use Silver Searcher to make it faster; note this makes show_hidden and custom_ignore not work
+" }}}
+
+" {{{ Matt stuff
+nnoremap <leader>t :!phpunit %<cr>
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'))
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+" }}}
+
+set modelines=1
+" vim:foldmethod=marker:foldlevel=0

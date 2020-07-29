@@ -1,0 +1,40 @@
+alias s="subl ."
+alias c="code ."
+alias m="mvim ."
+
+alias gac="git add .; git commit -am "
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
+alias refresh='source ~/.zshrc; echo "Reloaded .zshrc."'
+alias artisan='php artisan'
+alias oo='open .'
+
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
+alias refresh='source ~/.zshrc; echo "Reloaded .zshrc."'
+alias artisan='php artisan'
+
+alias ctagit='ctags -R .'
+
+alias gac="git add .; git commit -am "
+alias gpr="git pull --rebase"
+alias gbd="git branch -d"
+alias gcb="git checkout -b"
+alias gcup='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias goops="git reset --hard HEAD"
+alias gd="git diff --color | diff-so-fancy"
+
+alias cda="composer dump-autoload"
+alias mig="php artisan migrate"
+alias migse="php artisan db:seed"
+alias mfs="php artisan migrate:fresh --seed"
+
+alias camera='sudo killall VDCAssistant && sudo killall AppleCameraAssistant;'
+
+alias spacedock="defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
