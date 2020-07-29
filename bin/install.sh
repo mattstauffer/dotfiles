@@ -10,59 +10,54 @@ source "$my_dir/../support/functions.sh"
 # Check and prompt for necessary dependencies
 source "$my_dir/../support/precheck.sh"
 
-echo 'SYM LINKS ==============='
-echo ''
+title 'SYM LINKS'
 
 source "$my_dir/../support/sym_links.sh"
 
-echo "Only tested to this point"
+title 'VIM & VUNDLE'
+
+mkdir -p ~/.vim/bundle
+
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
+echo 'Only tested to this point'
 exit
 
-echo 'VIM & VUNDLE ============'
-echo ''
-# @todo
-
-echo 'HOMEBREW ================'
-echo ''
+title 'HOMEBREW'
 source ../support/brew.sh
 
-echo 'GIT ====================='
-echo ''
+title 'GIT'
 git config --global --edit
 git config --global core.excludesfile ~/.gitignore
 
-echo 'OHMYZSH ================='
-echo ''
+title 'OHMYZSH'
 # Should already be installed but what the hell
 brew install zsh zsh-completions
 chsh -s /usr/local/bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo 'COMPOSER ================'
-echo ''
+title 'COMPOSER'
 brew install composer
 # @todo all composer global deps: Valet, Laravel Installer, Lambo, ?
 
-echo 'VALET ==================='
-echo ''
+title 'VALET'
 valet install
 mkdir ~/Sites
-# @todo park ~/Sites? 
+# @todo park ~/Sites?
 
-echo 'NPM ====================='
-echo ''
+title 'NPM'
 # @todo nvm and npm and node
 # @todo all global npm deps
 
-echo 'RVM ====================='
-echo ''
+title 'RVM'
 # @todo rvm?
 # \curl -sSL https://get.rvm.io | bash -s stable
 # Rvm install 2.5.1
 #m Rvm use 2.5.1
 
-echo 'MACOS SETTINGS =========='
-echo ''
+title 'MACOS SETTINGS'
 source "$my_dir/../support/mac_settings.sh"
 
 # @todo all the steps in my Bear doc "code"... how many can be done programatically

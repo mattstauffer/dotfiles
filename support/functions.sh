@@ -12,3 +12,15 @@ prompt_quit_if_no () {
         exit
     fi
 }
+
+title () {
+    title=$1
+    title_length=${#title}
+    leftover=$(expr 30 - $title_length)
+
+    echo ''
+    printf "$title "
+    printf '=%.0s' {1..$leftover}
+    echo ''
+    echo ''
+}
