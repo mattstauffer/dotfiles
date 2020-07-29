@@ -1,6 +1,9 @@
 #!/bin/zsh
 
+pretend=true
+
 # @todo: Make this the full and actually correct list
+# @todo: add global git ignore
 declare -A sym_links
 sym_links=( [.zshrc]=~/.zshrc [.vimrc]=~/.vimrc [.ssh-config]=~/.ssh/config )
 

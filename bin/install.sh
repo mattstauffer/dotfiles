@@ -3,7 +3,6 @@
 # Last updated: July 13, 2020
 
 my_dir="$(dirname "$0")"
-pretend=true
 
 # Load functions
 source "$my_dir/../support/functions.sh"
@@ -26,6 +25,10 @@ source ../support/brew.sh
 echo "GIT ====================='
 echo ''
 git config --global --edit
+
+git config --global core.excludesfile ~/.gitignore
+
+# @todo: Set global gitignore
 
 echo 'OHMYZSH ================='
 echo ''
