@@ -12,8 +12,6 @@ echo 'Installing brew-mas'
 echo '-------------------'
 brew install mas
 
-# @todo: Can I move *all* of these into Brewfile? Not sure if bundle dump dumps MAS, too
-
 echo 'Installing Cask apps'
 echo '--------------------'
 source ./cask_apps.sh
@@ -27,3 +25,4 @@ echo '---------------------------------------'
 source ./brew_apps.sh
 
 # @todo start brew services
+# @todo Once I run this once, try dumping to a Brewfile to see if it actually dumps MAS and Cask correctly; if so, potentially replace all this with just Brewfile

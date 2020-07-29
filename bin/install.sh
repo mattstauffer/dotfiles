@@ -11,7 +11,6 @@ source "$my_dir/../support/functions.sh"
 # Check and prompt for necessary dependencies
 source "$my_dir/../support/precheck.sh"
 
-
 echo 'SYM LINKS ==============='
 echo ''
 

@@ -18,45 +18,46 @@ CASK_APPS=(
     "quicken"
     "telegram"
     "sublime-text"
+    "airfoil"
+    "loopback"
+    "audio-hijack"
+    "macvim"
+    "mailplane"
+    "github"
+    "tinkerwell"
+    "discord"
+    "dash"
+    "steam"
+    "muzzle"
+    "docker"
+    "fluid"
+    "iterm2"
+    "karabiner-elements"
+    "keybase"
+    "mailmate"
+    "nvalt"
+    "obs"
+    "paw"
+    "postgres"
+    "rocket"
+    "signal"
+    "skype"
+    "soundsource"
+    "choosy"
+    "hazel"
 
-    # @todo all other audio software: airfoil
-    # @todo adobe creative suite: acrobat, audition, photoshop
-    # @todo cloud app
-    # @todo vs code
-    # @todo macvim
+    # @todo Move into a prompt, not Cask:
+    # adobe creative suite: acrobat, audition, photoshop
+    # cloud app
+    # vs code
+    # hey
+    # ecamm movie tools
+    # elgato control center
+    # stream deck
+    # frank deloupe
+    # things
+    # gif brewery
+    # restream chat
+
     # @todo audit all other apps
-    # @todo mailplane
-    # @todo hey
-    # @todo github desktop
-    # @todo tinkerwell
-    # @todo discord
-    # @todo things
-    # @todo dash
-    # @todo steam
-    # @todo muzzle
-    # @todo docker
-    # @todo dropbox?
-    # @todo ecamm movie tools
-    # @todo elgato control center
-    # @todo fluid
-    # @todo frank deloupe
-    # @todo gif brewery 3
-    # @todo iterm2
-    # @todo izotope rx 7 (or the product portal?)
-    # @todo karabiner elements
-    # @todo keybase
-    # @todo mailmate
-    # @todo nvalt
-    # @todo OBS
-    # @todo paw
-    # @todo postgres
-    # @todo restream chat
-    # @todo Rocket
-    # @todo signal?
-    # @todo Skype
-    # @todo soundsource
-    # @todo stream deck
-    # @todo loopback
-    # @todo choosy
-    # @todo hazel
 )
