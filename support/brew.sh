@@ -32,5 +32,10 @@ echo 'Installing normal Homebrew dependencies'
 echo '---------------------------------------'
 source "$support_dir/brew_apps.sh"
 
-# @todo start brew services
-# @todo Once I run this once, try dumping to a Brewfile to see if it actually dumps MAS and Cask correctly; if so, potentially replace all this with just Brewfile
+echo ''
+echo 'Starting Homebrew services'
+echo '---------------------------------------'
+source "$support_dir/brew_services.sh"
+
+# @todo Once I run this once, try dumping to a Brewfile to see if it actually dumps
+# MAS and Cask correctly; if so, potentially replace all/most of this with just Brewfile

@@ -5,12 +5,16 @@
 set +x
 my_dir="$(dirname "$0")"
 support_dir="$my_dir/../support"
+dependencies_dir="$my_dir/../dependencies"
 
 # Load functions
 source "$support_dir/functions.sh"
 
 # Check and prompt for necessary dependencies
 source "$support_dir/precheck.sh"
+
+title 'DEPENDENCIES'
+source "$support_dir/dependencies"
 
 title 'SYM LINKS'
 source "$support_dir/sym_links.sh"
