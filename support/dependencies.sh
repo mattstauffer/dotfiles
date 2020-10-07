@@ -1,10 +1,9 @@
 #!/bin/zsh
 
-PWD=$(pwd)
-
 declare -A GIT_DEPENDENCIES 
 GIT_DEPENDENCIES=(
     ["$HOME/.hammerspoon"]="git@github.com:tighten/automation-scripts.git"
+    ["$HOME/.vim/bundle"]="https://github.com/VundleVim/Vundle.vim.git"
 )
 
 for dir repo in ${(kv)GIT_DEPENDENCIES}; do
@@ -27,5 +26,3 @@ for dir repo in ${(kv)GIT_DEPENDENCIES}; do
     fi
 
 done
-
-cd $PWD

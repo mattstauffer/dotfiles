@@ -1,26 +1,23 @@
 #!/bin/zsh
 
-# Last updated: July 13, 2020
+# Last updated: October 3, 2020
 
 set +x
-my_dir="$(dirname "$0")"
+#my_dir="$(dirname "$0")"
+my_dir="$HOME/dotfiles/bin"
 support_dir="$my_dir/../support"
-dependencies_dir="$my_dir/../dependencies"
 
 # Load functions
 source "$support_dir/functions.sh"
 
 # Check and prompt for necessary dependencies
-source "$support_dir/precheck.sh"
+source "$support_dir/precheck.sh" && cd $my_dir
 
 title 'DEPENDENCIES'
-source "$support_dir/dependencies"
+source "$support_dir/dependencies.sh" && cd $my_dir
 
 title 'SYM LINKS'
-source "$support_dir/sym_links.sh"
-
-title 'VIM & VUNDLE'
-source "$support_dir/vim.sh"
+source "$support_dir/sym_links.sh" && cd $my_dir
 
 title 'HOMEBREW'
 source "$support_dir/brew.sh"
