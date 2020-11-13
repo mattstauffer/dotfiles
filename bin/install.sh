@@ -29,33 +29,25 @@ git config --global user.email "matt@tighten.co"
 git config --global core.excludesfile ~/.gitignore
 
 title 'OHMYZSH'
-if [ $SHELL != '/bin/zsh' ]; then
-    chsh -s /usr/local/bin/zsh
-fi
-
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
-fi
+# source "$support_dir/ohmyzsh.sh" && cd $my_dir
 
 title 'COMPOSER'
-brew install composer
-composer global require laravel/valet laravel/installer tightenco/lambo tightenco/takeout
+# source "$support_dir/composer.sh" && cd $my_dir
 
 title 'VALET'
-valet trust
-valet install
-mkdir -p $HOME/Sites
-cd $HOME/Sites
-valet park
-cd $my_dir
+# source "$support_dir/valet.sh" && cd $my_dir
 
-echo "done post valet"
-exit
 title 'NPM'
-# @todo nvm and npm and node
+if [ ! -d "$HOME/.nvm" ]; then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+    export NVM_DIR=$HOME/.nvm;
+    source $NVM_DIR/nvm.sh;
+    nvm install 14
+fi
 # @todo all global npm deps
+
+echo 'done post npm'
+exit
 
 title 'RVM'
 # @todo rvm?

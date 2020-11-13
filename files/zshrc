@@ -50,7 +50,6 @@ fi
 # GitHub instead of Git
 # eval "$(hub alias -s)"
 
-# @todo: Should probably update this to only run if nvm is installed
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
