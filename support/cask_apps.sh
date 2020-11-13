@@ -1,4 +1,5 @@
 CASK_APPS=(
+    "1password"
     "notion"
     "spotify"
     "encryptme"

@@ -15,35 +15,44 @@ source "$support_dir/precheck.sh" && cd $my_dir
 
 title 'DEPENDENCIES'
 source "$support_dir/dependencies.sh" && cd $my_dir
+#@todo install hub
 
 title 'SYM LINKS'
 source "$support_dir/sym_links.sh" && cd $my_dir
 
 title 'HOMEBREW'
-source "$support_dir/brew.sh"
-
-echo 'Only tested to this point'
-exit
+#source "$support_dir/brew.sh"
 
 title 'GIT'
-git config --global --edit
+git config --global user.name "Matt Stauffer"
+git config --global user.email "matt@tighten.co"
 git config --global core.excludesfile ~/.gitignore
 
 title 'OHMYZSH'
-# Should already be installed but what the hell
-brew install zsh zsh-completions
-chsh -s /usr/local/bin/zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ $SHELL != '/bin/zsh' ]; then
+    chsh -s /usr/local/bin/zsh
+fi
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
+fi
 
 title 'COMPOSER'
 brew install composer
-# @todo all composer global deps: Valet, Laravel Installer, Lambo, ?
+composer global require laravel/valet laravel/installer tightenco/lambo tightenco/takeout
 
 title 'VALET'
+valet trust
 valet install
-mkdir ~/Sites
-# @todo park ~/Sites?
+mkdir -p $HOME/Sites
+cd $HOME/Sites
+valet park
+cd $my_dir
 
+echo "done post valet"
+exit
 title 'NPM'
 # @todo nvm and npm and node
 # @todo all global npm deps

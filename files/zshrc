@@ -8,6 +8,7 @@ ZSH_THEME="dstufft"
 
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
+ZSH_DISABLE_COMPFIX=true
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -47,7 +48,7 @@ if [[ -f ~/.dotfiles/extra ]]; then
 fi
 
 # GitHub instead of Git
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 # @todo: Should probably update this to only run if nvm is installed
 export NVM_DIR="$HOME/.nvm"
