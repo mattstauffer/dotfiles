@@ -52,7 +52,7 @@ CASK_APPS=(
 # brew cask install $string
 
 # Move to brewfile soon
-for app in $CASK_APPS; do
+for app in "${CASK_APPS[@]}"; do
     echo " - Installing $app..."
     brew cask install $app
 done
