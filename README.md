@@ -2,7 +2,15 @@
 
 Making it myself instead of forking an existing repo.
 
-Inspirations/conversations:
+## Steps to use it
+
+1. Open Terminal
+2. Type `git` and follow the prompts to install the command line developer tools
+3. TODO flesh this out
+
+
+## Inspirations/conversations
+
 - Ian Landsman
 - Andrew Morgan
 - Jose Soto
