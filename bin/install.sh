@@ -1,55 +1,53 @@
 #!/bin/zsh
 
-# Last updated: July 13, 2020
+# Last updated: October 3, 2020
 
 set +x
-my_dir="$(dirname "$0")"
+#my_dir="$(dirname "$0")"
+my_dir="$HOME/dotfiles/bin"
 support_dir="$my_dir/../support"
-dependencies_dir="$my_dir/../dependencies"
 
 # Load functions
 source "$support_dir/functions.sh"
 
 # Check and prompt for necessary dependencies
-source "$support_dir/precheck.sh"
+source "$support_dir/precheck.sh" && cd $my_dir
 
 title 'DEPENDENCIES'
-source "$support_dir/dependencies"
+source "$support_dir/dependencies.sh" && cd $my_dir
+#@todo install hub
 
 title 'SYM LINKS'
-source "$support_dir/sym_links.sh"
-
-title 'VIM & VUNDLE'
-source "$support_dir/vim.sh"
+source "$support_dir/sym_links.sh" && cd $my_dir
 
 title 'HOMEBREW'
-source "$support_dir/brew.sh"
-
-echo 'Only tested to this point'
-exit
+#source "$support_dir/brew.sh"
 
 title 'GIT'
-git config --global --edit
+git config --global user.name "Matt Stauffer"
+git config --global user.email "matt@tighten.co"
 git config --global core.excludesfile ~/.gitignore
 
 title 'OHMYZSH'
-# Should already be installed but what the hell
-brew install zsh zsh-completions
-chsh -s /usr/local/bin/zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# source "$support_dir/ohmyzsh.sh" && cd $my_dir
 
 title 'COMPOSER'
-brew install composer
-# @todo all composer global deps: Valet, Laravel Installer, Lambo, ?
+# source "$support_dir/composer.sh" && cd $my_dir
 
 title 'VALET'
-valet install
-mkdir ~/Sites
-# @todo park ~/Sites?
+# source "$support_dir/valet.sh" && cd $my_dir
 
 title 'NPM'
-# @todo nvm and npm and node
+if [ ! -d "$HOME/.nvm" ]; then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+    export NVM_DIR=$HOME/.nvm;
+    source $NVM_DIR/nvm.sh;
+    nvm install 14
+fi
 # @todo all global npm deps
+
+echo 'done post npm'
+exit
 
 title 'RVM'
 # @todo rvm?

@@ -1,15 +1,28 @@
 #!/bin/zsh
 
+declare -A GIT_DEPENDENCIES 
 GIT_DEPENDENCIES=(
-    # @todo: Hammerspoon can't handle symlinks so this doesn't work.
-    # Maybe I'll allow for defining where to clone these *into* so we
-    # can clone this one into ~/.hammerspoon ?
-    # "git@github.com:tightenco/automation-scripts.git"
+    ["$HOME/.hammerspoon"]="git@github.com:tighten/automation-scripts.git"
+    ["$HOME/.vim/bundle"]="https://github.com/VundleVim/Vundle.vim.git"
 )
 
-cd $dependencies_dir
-for repo in $GIT_DEPENDENCIES; do
-    # @todo if cloned, pull
-    git clone $repo
+for dir repo in ${(kv)GIT_DEPENDENCIES}; do
+    mkdir -p $dir
+    cd $dir
+    git clone $repo > /dev/null 2>&1
+    CLONE_SUCCESS=$?
+
+    if [[ $CLONE_SUCCESS == 0 ]]
+    then
+        echo "Clone successful - ($repo)"
+    fi
+
+    if [[ $CLONE_SUCCESS == 128 ]]
+    then
+        echo "Clone fail - $repo (sorry, can't handle that case right now)"
+        # If folder already exists, CD in and pull the latest?
+        # @todo figure out the folder by parsing the repo :grimace:
+        # @todo cd into that folder and git pull
+    fi
+
 done
-cd -

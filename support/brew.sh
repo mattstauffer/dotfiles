@@ -13,7 +13,6 @@ echo 'Installing brew-mas'
 echo '-------------------'
 brew install mas
 
-
 echo ''
 echo 'Installing Cask apps'
 echo '--------------------'
@@ -30,12 +29,8 @@ exit
 echo ''
 echo 'Installing normal Homebrew dependencies'
 echo '---------------------------------------'
-source "$support_dir/brew_apps.sh"
-
-echo ''
-echo 'Starting Homebrew services'
-echo '---------------------------------------'
-source "$support_dir/brew_services.sh"
+cd $support_dir
+brew bundle
 
 # @todo Once I run this once, try dumping to a Brewfile to see if it actually dumps
 # MAS and Cask correctly; if so, potentially replace all/most of this with just Brewfile

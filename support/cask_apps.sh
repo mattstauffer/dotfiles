@@ -1,4 +1,5 @@
 CASK_APPS=(
+    "1password"
     "notion"
     "spotify"
     "encryptme"
@@ -13,7 +14,6 @@ CASK_APPS=(
     "Imageoptim"
     "backblaze"
     "slack"
-    "zoomus"
     "sketch"
     "quicken"
     "telegram"
@@ -32,7 +32,6 @@ CASK_APPS=(
     "docker"
     "fluid"
     "iterm2"
-    "karabiner-elements"
     "keybase"
     "mailmate"
     "nvalt"
@@ -42,16 +41,18 @@ CASK_APPS=(
     "signal"
     "skype"
     "soundsource"
-    "choosy"
     "hazel"
+    "zoomus"
+    "karabiner-elements"
+    "choosy"
 )
 
 # Spent all this time writing this and you can't even do it this way???
 # string=${(j: :)CASK_APPS}
 # brew cask install $string
 
-# This sucks and will motivate me to move to Brewfile even faster
-for app in $CASK_APPS; do
-    # @todo
-    echo "brew cask install $app"
+# Move to brewfile soon
+for app in "${CASK_APPS[@]}"; do
+    echo " - Installing $app..."
+    brew cask install $app
 done
