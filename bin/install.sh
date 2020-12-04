@@ -23,12 +23,13 @@ title 'SYM LINKS'
 source "$support_dir/sym_links.sh" && cd $my_dir
 
 title 'HOMEBREW'
-source "$support_dir/brew.sh"
+#source "$support_dir/brew.sh"
 
 title 'GIT'
 git config --global user.name "Matt Stauffer"
 git config --global user.email "matt@tighten.co"
 git config --global core.excludesfile ~/.gitignore
+echo 'XX -- Git done.'
 
 title 'OHMYZSH'
 source "$support_dir/ohmyzsh.sh" && cd $my_dir
@@ -47,6 +48,8 @@ if [ ! -d "$HOME/.nvm" ]; then
     nvm install 14
 fi
 # @todo all global npm deps
+
+echo 'XX -- NPM done.'
 
 echo 'done post npm'
 exit

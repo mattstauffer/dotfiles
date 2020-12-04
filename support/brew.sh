@@ -34,3 +34,5 @@ brew bundle
 
 # @todo Once I run this once, try dumping to a Brewfile to see if it actually dumps
 # MAS and Cask correctly; if so, potentially replace all/most of this with just Brewfile
+
+echo 'XX -- Homebrew done.'
