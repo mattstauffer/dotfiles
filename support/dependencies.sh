@@ -26,3 +26,5 @@ for dir repo in ${(kv)GIT_DEPENDENCIES}; do
     fi
 
 done
+
+echo 'XX -- Dependencies done.'

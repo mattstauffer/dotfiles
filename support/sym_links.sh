@@ -20,3 +20,5 @@ if test -f "$HOME/.ssh/config"; then
 else 
     ln -s $HOME/Dropbox\ \(Personal\)/Apps/Dotfiles/symlinks/ssh-config $HOME/.ssh/config
 fi
+
+echo 'XX -- Symlinks done.'

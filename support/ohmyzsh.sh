@@ -9,3 +9,5 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
 fi
+
+echo 'XX -- OhMyZSH done.'
