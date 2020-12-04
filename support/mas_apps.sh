@@ -28,6 +28,5 @@ MAS_APPS=(
 
 # @todo: Wasn't there a way to pass this like a Brewfile??
 for app in $MAS_APPS; do
-    # @todo
-    echo "mas install $app"
+    mas install $app
 done
