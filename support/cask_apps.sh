@@ -49,10 +49,10 @@ CASK_APPS=(
 
 # Spent all this time writing this and you can't even do it this way???
 # string=${(j: :)CASK_APPS}
-# brew cask install $string
+# brew install --cask $string
 
 # Move to brewfile soon
 for app in "${CASK_APPS[@]}"; do
     echo " - Installing $app..."
-    brew cask install $app
+    brew install --cask $app
 done

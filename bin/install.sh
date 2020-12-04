@@ -1,11 +1,13 @@
 #!/bin/zsh
 
-# Last updated: October 3, 2020
+# Last updated Brew/app list: October 3, 2020
 
 set +x
 #my_dir="$(dirname "$0")"
 my_dir="$HOME/dotfiles/bin"
 support_dir="$my_dir/../support"
+
+cd $my_dir
 
 # Load functions
 source "$support_dir/functions.sh"
@@ -21,7 +23,7 @@ title 'SYM LINKS'
 source "$support_dir/sym_links.sh" && cd $my_dir
 
 title 'HOMEBREW'
-#source "$support_dir/brew.sh"
+source "$support_dir/brew.sh"
 
 title 'GIT'
 git config --global user.name "Matt Stauffer"
@@ -29,13 +31,13 @@ git config --global user.email "matt@tighten.co"
 git config --global core.excludesfile ~/.gitignore
 
 title 'OHMYZSH'
-# source "$support_dir/ohmyzsh.sh" && cd $my_dir
+source "$support_dir/ohmyzsh.sh" && cd $my_dir
 
 title 'COMPOSER'
-# source "$support_dir/composer.sh" && cd $my_dir
+source "$support_dir/composer.sh" && cd $my_dir
 
 title 'VALET'
-# source "$support_dir/valet.sh" && cd $my_dir
+source "$support_dir/valet.sh" && cd $my_dir
 
 title 'NPM'
 if [ ! -d "$HOME/.nvm" ]; then
