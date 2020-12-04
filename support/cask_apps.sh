@@ -1,6 +1,7 @@
 CASK_APPS=(
     "1password"
     "notion"
+    "colorsnapper"
     "spotify"
     "encryptme"
     "tableplus"
