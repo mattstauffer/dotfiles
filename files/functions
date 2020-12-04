@@ -14,8 +14,14 @@ function xdebug {
         echo -e "\nXdebug enabled.\n"
     else
         echo -e "\nError: Can't find any Xdebug config file at ${CONFIG_FILE}."
+        return 1
         exit
     fi
 
     valet restart php
+}
+
+function createDb {
+    DB_NAME=$(awk -F "=" '/DB_DATABASE/ {print $2}' .env)
+    docker exec TO--mysql--5.7--3306 mysql -e "CREATE DATABASE ${DB_NAME} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 }

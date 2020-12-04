@@ -18,9 +18,9 @@ Copying Include Files to $PROJECTPATH
 cp -R ~/.lambo/includes/ $PROJECTPATH
 
 # To add a git commit after given modifications
-# echo "
-# Committing after modifications to Git
-# "
-# git add .
-# git commit -am "Initialize Composer dependencies and additional files."
+echo "
+Committing after modifications to Git
+"
+git add .
+git commit -am "Add include files."
 
