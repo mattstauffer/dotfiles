@@ -42,7 +42,7 @@ CASK_APPS=(
     "skype"
     "soundsource"
     "hazel"
-    "zoomus"
+    "zoom"
     "karabiner-elements"
     "choosy"
 )
