@@ -23,7 +23,7 @@ title 'SYM LINKS'
 source "$support_dir/sym_links.sh" && cd $my_dir
 
 title 'HOMEBREW'
-#source "$support_dir/brew.sh"
+source "$support_dir/brew.sh"
 
 title 'GIT'
 git config --global user.name "Matt Stauffer"
