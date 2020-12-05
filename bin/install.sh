@@ -51,15 +51,6 @@ fi
 
 echo 'XX -- NPM done.'
 
-echo 'done post npm'
-exit
-
-title 'RVM'
-# @todo rvm?
-# \curl -sSL https://get.rvm.io | bash -s stable
-# Rvm install 2.5.1
-#m Rvm use 2.5.1
-
 title 'MACOS SETTINGS'
 source "$support_dir/mac_settings.sh"
 

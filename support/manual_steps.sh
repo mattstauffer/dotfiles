@@ -1,16 +1,25 @@
 #!/bin/bash
 
 echo 'Sadly, there are still a few things on your list!'
+echo ''
 echo 'Install these apps from their respective sources:'
 echo 'Adobe creative suite: acrobat, audition, photoshop'
-echo 'VS code'
 echo 'Hey'
 echo 'Ecamm Call Recorder'
 echo 'Elgato Control Center'
 echo 'Stream Deck'
 echo 'Restream Chat'
-echo 'Deckset'
-echo 'open 1pasword and log in'
-echo 'open choosy and let it take over and customize the list'
-echo 'Open BusyCal and authenticate with iCloud and google'
-echo 'Open Divvy and grant it its permissions and set up the shortcuts'
+
+echo ''
+echo 'Open these apps and let them get configured:'
+echo '1password; log in'
+echo 'colorsnapper; choose keyboard shortcuts and give it permissions'
+echo 'choosy; customize the list'
+echo 'busycal; authenticate with iCloud and Google'
+echo 'divvy; give it permissions'
+echo 'slack; sign in'
+echo '@todo MANY MORE'
+
+echo 'And finally,:'
+echo 'Set up the Dock the way you want'
+
