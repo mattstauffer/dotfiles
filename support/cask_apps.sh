@@ -3,6 +3,7 @@ CASK_APPS=(
     "notion"
     "colorsnapper"
     "deckset"
+    "textexpander"
     "visual-studio-code"
     "spotify"
     "encryptme"
