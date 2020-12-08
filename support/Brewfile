@@ -37,4 +37,4 @@ brew "zlib"
 brew "zsh"
 brew "zsh-completions"
 brew "heroku/brew/heroku"
-cask "webpquicklook"
+brew "yqrashawn/goku/goku", restart_service: true

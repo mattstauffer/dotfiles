@@ -1,7 +1,9 @@
 CASK_APPS=(
+    "webpquicklook"
     "1password"
     "notion"
     "colorsnapper"
+    "hammerspoon"
     "deckset"
     "textexpander"
     "visual-studio-code"

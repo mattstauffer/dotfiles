@@ -20,6 +20,7 @@ echo 'divvy; give it permissions'
 echo 'slack; sign in'
 echo 'telegram; sign in, disable annoying default notifications'
 echo 'textexpander; sign in'
+echo 'karabiner-elements; find the .pkg and run it; then open karabiner and give it permissions'
 echo '@todo MANY MORE'
 
 echo 'And finally,:'

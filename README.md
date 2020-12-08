@@ -19,7 +19,7 @@ Making it myself instead of forking an existing repo.
 1. Type `git clone https://github.com/mattstauffer/dotfiles.git dotfiles`, hit enter
 1. Type `cd dotfiles`, hit enter
 1. Type `./bin/install.sh`, hit enter
-1. TODO flesh this out
+1. Profit?
 
 
 ## Inspirations/conversations
@@ -29,6 +29,5 @@ Making it myself instead of forking an existing repo.
 - Jose Soto
 
 # TODO
-- Add hammerspoon the app, and also figure out how to symlink some elements from ~/.hammerspoon directory in if possible (remember, the lua watcher doesn't catch changes to symlinked files)
-- Add karabiner elements
+- Figure out how to symlink some elements from ~/.hammerspoon directory in if possible (remember, the lua watcher doesn't catch changes to symlinked files)
 - Add Goku and start Goku config, and symlink Goku config
