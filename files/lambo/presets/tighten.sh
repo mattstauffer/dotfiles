@@ -99,6 +99,7 @@ EOF
 
 appendToJson 'package.json' "$husky"
 
+printf "\n\n\n\n\nTODO: Un-comment lines 24 and 25 in phpunit.xml\n\n\n\n\n" 
 
 if [[ ! $PUBLIC =~ ^[Yy]$ ]]
 then
