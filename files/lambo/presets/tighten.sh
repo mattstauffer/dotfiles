@@ -1,15 +1,7 @@
 #!/bin/bash
 
-echo
-read -p "This script is meant to be run in directory of a brand-new Laravel app. Cool? " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    printf 'Quitting'
-    exit 1
-fi
-
 WHITE='\033[0;37m'
+CYAN='\033[0;36m'
 CLEAR='\033[0m'
 
 function title ()
@@ -33,6 +25,19 @@ function appendToJson()
     echo "}" >> $1
 }
 
+printf "${CYAN}\n"
+read -p "This script is meant to be run in directory of a brand-new Laravel app. Cool? " -n 1 -r
+printf "${CLEAR}\n"
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    printf "\nOK, quitting.\n"
+    exit 1
+fi
+
+printf "${CYAN}\n"
+read -p "Will this app be public on GitHub? " -n 1 -r
+printf "${CLEAR}\n"
+PUBLIC=$REPLY
 
 title "Removing files..."
 rm -f .styleci.yml
@@ -95,20 +100,18 @@ EOF
 
 appendToJson 'package.json' "$husky"
 
-printf 'past' && exit
 
-- Add OG/etc. https://github.com/tighten/handbook/tree/main/best-practices/meta
-
-
-echo
-read -p "Will this app be public on GitHub?" -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]
+if [[ ! $PUBLIC =~ ^[Yy]$ ]]
 then
-    print "Remember to set this project up in Chipper/CodeShip."
+    printf "\nRemember to set this project up in Chipper/CodeShip.\n"
     exit 1
 fi
 
-## If open source
-- Add GitHub actions for tests (todo link)
-- Add GitHub actions for lints (todo link)
+title 'Adding GitHub Actions for linting and running tests...'
+mkdir -p .github/workflows
+
+wget -O .github/workflows/run-tests.yml https://raw.githubusercontent.com/tighten/configs/main/github-actions/run-tests.yml
+wget -O .github/workflows/lint.yml https://raw.githubusercontent.com/tighten/configs/main/github-actions/lint.yml
+
+title 'All done! Happy coding!'
+echo 'Remember to add OpenGraph/Twitter tags when you build the site out.'
