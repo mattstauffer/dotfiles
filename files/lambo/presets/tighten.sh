@@ -44,8 +44,7 @@ rm -f .styleci.yml
 rm -f docker-compose.yml
 
 title "Adding Composer dependencies..."
-composer require tightenco/tlint
-composer require squizlabs/php_codesniffer friendsofphp/php-cs-fixer barryvdh/laravel-debugbar --dev
+composer require tightenco/tlint squizlabs/php_codesniffer friendsofphp/php-cs-fixer barryvdh/laravel-debugbar --dev
 
 title "Adding files to .gitignore..."
 echo ".php_cs.cache" >> .gitignore
