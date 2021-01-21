@@ -50,7 +50,7 @@ title "Adding files to .gitignore..."
 echo ".php_cs.cache" >> .gitignore
 
 title "Downloading dotfiles from GitHub..."
-wget -O .php_cs.xml.dist https://raw.githubusercontent.com/tighten/configs/main/.phpcs.xml.dist
+wget -O .phpcs.xml.dist https://raw.githubusercontent.com/tighten/configs/main/.phpcs.xml.dist
 wget -O .php_cs.dist https://raw.githubusercontent.com/tighten/configs/main/.php_cs.dist
 wget -O .stylelintrc https://raw.githubusercontent.com/tighten/configs/main/.stylelintrc
 wget -O README.md https://raw.githubusercontent.com/tighten/configs/main/templates/app-README.md
