@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# @todo: Clean up the linting parts of this and replace them with requiring Duster (https://github.com/tighten/duster)
+
 WHITE='\033[0;37m'
 CYAN='\033[0;36m'
 CLEAR='\033[0m'
