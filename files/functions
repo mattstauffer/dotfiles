@@ -29,3 +29,24 @@ function createDb {
 function arm {
     arch -x86_64 $@
 }
+
+function ip {
+    if [[ $# -eq 0 ]] ; then
+        echo 'Please provide the URL to look up.'
+        return
+    fi
+
+    echo `dig +short $1 | awk '{ print ; exit }'`
+}
+
+function sshname {
+    if [[ $# -eq 0 ]] ; then
+        echo 'Please provide the URL to look up.'
+        return
+    fi
+
+    IP=`ip $1`
+    FOUNDHOST=`grep -B 1 $IP ~/.ssh/config | head -n 1 | awk '{print $2;}'`
+
+    echo $FOUNDHOST
+}
