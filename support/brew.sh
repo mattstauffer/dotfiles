@@ -12,6 +12,6 @@ echo ''
 echo 'Installing Homebrew dependencies'
 echo '--------------------------------'
 cd $support_dir
-arch -x86_64 brew bundle
+arch -arm64 brew bundle
 
 echo 'XX -- Homebrew done.'
