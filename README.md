@@ -19,13 +19,6 @@ Making it myself instead of forking an existing repo.
 1. Type `./bin/install.sh`, hit enter
 1. Profit?
 
-
-## Inspirations/conversations
-
-- Ian Landsman
-- Andrew Morgan
-- Jose Soto
-
 # TODO
 - Figure out how to symlink some elements from ~/.hammerspoon directory in if possible (remember, the lua watcher doesn't catch changes to symlinked files)
 - Add Goku and start Goku config, and symlink Goku config
