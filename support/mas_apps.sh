@@ -20,6 +20,8 @@ MAS_APPS=(
     "Paw::584653203"
     "GIF_Brewery_3::1081413713"
 )
+# TODO ADD POWERPOINT AND WORD
+# TODO ADD KEYNOTE AND NUMBERS AND PAGES
 
 for index in "${MAS_APPS[@]}" ; do
     KEY="${index%%::*}"
