@@ -8,7 +8,6 @@ MAS_APPS=(
     "StuffIt_Expander::919269455"
     "Transmit::1436522307"
     "BusyCal::567245998"
-    "Tweetbot::1384080005"
     "GIPHY_Capture::668208984"
     "Trello::1278508951"
     "Things::904280696"
