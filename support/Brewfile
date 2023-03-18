@@ -103,13 +103,18 @@ brew "zsh-completions"
 brew "heroku/brew/heroku"
 brew "stripe/stripe-cli/stripe"
 brew "yqrashawn/goku/goku"
+
+# Casks that require passwords
+cask "zoom"
+cask "choosy"
+cask "karabiner-elements"
+
 cask "1password"
 cask "airfoil"
 cask "alfred"
 cask "audio-hijack"
 cask "backblaze"
 cask "bartender"
-cask "choosy"
 cask "colorsnapper"
 cask "dash"
 cask "deckset"
@@ -124,7 +129,6 @@ cask "hammerspoon"
 cask "hazel"
 cask "imageoptim"
 cask "iterm2"
-cask "karabiner-elements"
 cask "keybase"
 cask "loopback"
 cask "macvim"
@@ -135,7 +139,6 @@ cask "ngrok"
 cask "notion"
 cask "nvalt"
 cask "phpstorm"
-cask "postgres"
 cask "rocket"
 cask "screenflow"
 cask "signal"
@@ -151,7 +154,8 @@ cask "textexpander"
 cask "tinkerwell"
 cask "visual-studio-code"
 cask "webpquicklook"
-cask "zoom"
+
+# Mac App Store
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
 mas "BreakTime", id: 427475982
@@ -163,7 +167,6 @@ mas "Deliveries", id: 924726344
 mas "Divvy", id: 413857545
 mas "GIF Brewery 3", id: 1081413713
 mas "GIPHY CAPTURE", id: 668208984
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "MindNode", id: 1289197285
