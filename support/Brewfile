@@ -80,6 +80,7 @@ cask "ngrok"
 cask "notion"
 cask "nvalt"
 cask "phpstorm"
+cask "rectangle"
 cask "rocket"
 cask "screenflow"
 cask "signal"
@@ -105,7 +106,6 @@ mas "CloudApp", id: 417602904
 mas "DaisyDisk", id: 411643860
 mas "Day One", id: 1055511498
 mas "Deliveries", id: 924726344
-mas "Divvy", id: 413857545
 mas "GIPHY CAPTURE", id: 668208984
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
