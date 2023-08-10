@@ -23,9 +23,21 @@ function xdebug {
 
 function createDb {
     DB_NAME=$(awk -F "=" '/DB_DATABASE/ {print $2}' .env)
-    docker exec TO--mysql--5.7--3306 mysql -e "CREATE DATABASE ${DB_NAME} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
+    docker exec TO--mysql--8.0.23--3306 mysql -e "CREATE DATABASE ${DB_NAME} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 }
 
 function arm {
     arch -x86_64 $@
+}
+
+function lup {
+    composer install
+    cp .env.example .env
+    php artisan key:generate
+    perl -pi -e "s/(?'var'DB_DATABASE=)(.*)/$+{var}capybara/g" ".env"
+    php artisan migrate:fresh --seed
+    rm ~/Sites/capybara
+    ln -s $PWD ~/Sites/capybara
+    phpunit
+    subl . 
 }

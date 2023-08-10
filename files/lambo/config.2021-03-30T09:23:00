@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+PROJECTPATH="."
+MESSAGE="Initial commit."
+DEVELOP=false
+AUTH=false
+NODE=false
+CODEEDITOR="code"
+BROWSER=""
+LINK=false
+FRONTEND="vue"
