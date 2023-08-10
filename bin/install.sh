@@ -42,10 +42,10 @@ source "$support_dir/valet.sh" && cd $my_dir
 
 title 'NPM'
 if [ ! -d "$HOME/.nvm" ]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     export NVM_DIR=$HOME/.nvm;
     source $NVM_DIR/nvm.sh;
-    nvm install 14
+    nvm install 18.15
 fi
 # @todo all global npm deps
 

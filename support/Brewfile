@@ -1,40 +1,121 @@
+tap "candid82/brew"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-brew "openssl"
-brew "autoconf"
-brew "automake"
+tap "shivammathur/php"
+tap "stripe/stripe-cli"
+tap "yqrashawn/goku"
+brew "webp"
+brew "jpeg-xl"
+brew "fontconfig"
+brew "glib"
+brew "gd"
+brew "composer"
 brew "coreutils"
 brew "ctags"
 brew "diff-so-fancy"
-brew "dnsmasq", restart_service: true
-brew "exa"
+brew "dnsmasq"
+brew "gnutls"
 brew "ffmpeg"
 brew "fzf"
-brew "gdal"
 brew "git"
-brew "git-lfs"
-brew "libksba"
 brew "gnupg"
+brew "go"
 brew "grep"
 brew "highlight"
 brew "httpd"
 brew "hub"
+brew "jasper"
+brew "imagemagick"
+brew "macvim", link: false
+brew "mas"
 brew "memcached", restart_service: true
-brew "libmemcached"
-brew "libyaml"
-brew "macvim"
-brew "nginx", restart_service: true
+brew "mysql", restart_service: true
+brew "nginx"
 brew "optipng"
-brew "pacvim"
-brew "php", restart_service: true
-brew "redis", restart_service: true
+brew "qt"
 brew "the_silver_searcher"
 brew "wget"
-brew "zlib"
 brew "zsh"
 brew "zsh-completions"
 brew "heroku/brew/heroku"
-brew "yqrashawn/goku/goku", restart_service: true
+brew "stripe/stripe-cli/stripe"
+brew "yqrashawn/goku/goku"
+
+# Casks that require passwords
+cask "zoom"
+cask "choosy"
+cask "karabiner-elements"
+
+cask "1password"
+cask "airfoil"
+cask "alfred"
+cask "audio-hijack"
+cask "backblaze"
+cask "bartender"
+cask "colorsnapper"
+cask "dash"
+cask "deckset"
+cask "discord"
+cask "docker"
+cask "encryptme"
+cask "firefox"
+cask "fluid"
+cask "github"
+cask "google-chrome"
+cask "hammerspoon"
+cask "hazel"
+cask "imageoptim"
+cask "iterm2"
+cask "keybase"
+cask "loopback"
+cask "macvim"
+cask "mailmate"
+cask "mailplane"
+cask "muzzle"
+cask "ngrok"
+cask "notion"
+cask "nvalt"
+cask "phpstorm"
+cask "rectangle"
+cask "rocket"
+cask "screenflow"
+cask "signal"
+cask "skype"
+cask "slack"
+cask "soundsource"
+cask "spotify"
+cask "steam"
+cask "sublime-text"
+cask "tableplus"
+cask "telegram"
+cask "textexpander"
+cask "tinkerwell"
+cask "visual-studio-code"
+cask "webpquicklook"
+
+# Mac App Store
+mas "Amphetamine", id: 937984704
+mas "Bear", id: 1091189122
+mas "BreakTime", id: 427475982
+mas "BusyCal", id: 567245998
+mas "CloudApp", id: 417602904
+mas "DaisyDisk", id: 411643860
+mas "Day One", id: 1055511498
+mas "Deliveries", id: 924726344
+mas "GIPHY CAPTURE", id: 668208984
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "MindNode", id: 1289197285
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Paw", id: 584653203
+mas "Soulver", id: 413965349
+mas "StuffIt Expander", id: 919269455
+mas "The Unarchiver", id: 425424353
+mas "Things", id: 904280696
+mas "Transmit", id: 1436522307
+mas "Trello", id: 1278508951
