@@ -1,0 +1,53 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash(grep:*)",
+      "Bash(gh:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(python3:*)",
+      "Bash(php:*)",
+      "Bash(php artisan:*)",
+      "Bash(composer:*)",
+      "Bash(vendor/bin/duster:*)",
+      "Bash(vendor/bin/pest:*)",
+      "Bash(.husky/*:*)",
+      "Bash(code:*)",
+      "Bash(find:*)",
+      "Bash(find * | head *)",
+      "Bash(find * | tail *)",
+      "Bash(find * | wc *)",
+      "Bash(ls:*)",
+      "Bash(sqlite3:*)",
+      "Bash(createdb:*)",
+      "Bash(xargs:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(echo:*)",
+      "mcp__laravel-boost__*"
+    ],
+    "deny": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
+}
